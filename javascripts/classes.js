@@ -4,6 +4,7 @@
 var Gauntlet = Gauntlet || {};
 Gauntlet.GuildHall = {};
 
+var classNamess = ["Warrior", "Valkyrie", "Berserker", "Monk", "Shaman", "Wizard", "Conjurer", "Sorcerer"]
 /*
   Base function for a player, or enemy, class (profession)
  */
