@@ -29,3 +29,37 @@ var WarAxe = function() {
 };
 WarAxe.prototype = new Weapon();
 
+var Mace = function() {
+  this.name = "mace";
+  this.damage = 12;
+  this.hands = 2;
+};
+Mace.prototype = new Weapon();
+
+var Lance = function() {
+  this.name = "lance";
+  this.damage = 10;
+  this.hands = 2;
+};
+Lance.prototype = new Weapon();
+
+var Spike = function() {
+  this.name = "spike";
+  this.damage = 18;
+  this.hands = 2;
+};
+Spike.prototype = new Weapon();
+
+var Bomb = function() {
+  this.name = "bomb";
+  this.damage = 50;
+  this.hands = 2;
+};
+Bomb.prototype = new Weapon();
+
+var Tomahawk = function() {
+  this.name = "tomahawk";
+  this.damage = 18;
+  this.hands = 2;
+};
+Tomahawk.prototype = new Weapon();
