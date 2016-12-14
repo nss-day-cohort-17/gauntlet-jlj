@@ -7,7 +7,7 @@ Gauntlet.GuildHall = {};
 /*
   Base function for a player, or enemy, class (profession)
  */
- 
+
 Gauntlet.GuildHall.PlayerClass = function() {
   this.name = "Beggar";
   this.healthBonus = 0;
@@ -124,3 +124,27 @@ Gauntlet.GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
       - Ninja
       - Assassin
  */
+
+Gauntlet.GuildHall.Thief = function() {
+    this.name = "Theif";
+    this.healthBonus = this.healthBonus - 5;
+    this.strengthBonus = this.strengthBonus - 20;
+    this.intelligenceBonus = this.intelligenceBonus + 30;
+};
+Gauntlet.GuildHall.Thief.prototype = new Gauntlet.GuildHall.Mage();
+
+Gauntlet.GuildHall.Ninja = function() {
+    this.name = "Ninja";
+    this.healthBonus = this.healthBonus - 5;
+    this.strengthBonus = this.strengthBonus - 20;
+    this.intelligenceBonus = this.intelligenceBonus + 30;
+};
+Gauntlet.GuildHall.Ninja.prototype = new Gauntlet.GuildHall.Mage();
+
+Gauntlet.GuildHall.Assassin = function() {
+    this.name = "Assassin";
+    this.healthBonus = this.healthBonus - 5;
+    this.strengthBonus = this.strengthBonus - 20;
+    this.intelligenceBonus = this.intelligenceBonus + 30;
+};
+Gauntlet.GuildHall.Assassin.prototype = new Gauntlet.GuildHall.Mage();
