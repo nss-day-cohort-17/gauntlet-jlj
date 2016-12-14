@@ -29,6 +29,7 @@ var WarAxe = function() {
 };
 WarAxe.prototype = new Weapon();
 
+
 var Mace = function() {
   this.name = "mace";
   this.damage = 12;
@@ -63,3 +64,5 @@ var Tomahawk = function() {
   this.hands = 2;
 };
 Tomahawk.prototype = new Weapon();
+
+

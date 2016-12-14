@@ -2,9 +2,9 @@
   Test code to generate a human player and an orc player
  */
 var warrior = new Gauntlet.Combatants.Human();
-warrior.setWeapon(new WarAxe());
-warrior.generateClass();  // This will be used for "Surprise me" option
-console.log(warrior.toString());
+// warrior.setWeapon(new WarAxe());
+// warrior.generateClass();  // This will be used for "Surprise me" option
+// console.log(warrior.toString());
 
 var orc = new Gauntlet.Combatants.Orc();
 orc.generateClass();
@@ -17,6 +17,10 @@ console.log(orc.toString());
 var spell = new Gauntlet.SpellBook.Sphere();
 console.log("spell: ", spell.toString());
 
+
+function chooseClass() {
+
+}
 
 $(document).ready(function() {
   /*
@@ -35,10 +39,19 @@ $(document).ready(function() {
     switch (nextCard) {
       case "card--class":
         moveAlong = ($("#player-name").val() !== "");
+        warrior.playerName = $("#player-name").val()
+        console.log(warrior);
         break;
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
+
+        console.log(warrior);
+
         break;
+        case "card--battleground":
+          moveAlong = ($("#player-name").val() !== "");
+          // warrior.setWeapon(new WarAxe());
+          break;
     }
 
     if (moveAlong) {
@@ -57,3 +70,13 @@ $(document).ready(function() {
   });
 
 });
+
+
+console.log(Gauntlet);
+
+$(".btn--blue").click(function(e) {
+var selectedClass = $(this).find(".btn__text")
+var selectedClass = selectedClass[0].textContent;
+  // console.log(selectedClass);
+})
+
