@@ -7,6 +7,7 @@ Gauntlet.GuildHall = {};
 /*
   Base function for a player, or enemy, class (profession)
  */
+ 
 Gauntlet.GuildHall.PlayerClass = function() {
   this.name = "Beggar";
   this.healthBonus = 0;
@@ -123,4 +124,3 @@ Gauntlet.GuildHall.Sorcerer.prototype = new Gauntlet.GuildHall.Mage();
       - Ninja
       - Assassin
  */
-

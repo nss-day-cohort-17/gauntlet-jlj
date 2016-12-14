@@ -71,6 +71,7 @@ $(document).ready(function() {
 
 });
 
+
 console.log(Gauntlet);
 
 $(".btn--blue").click(function(e) {
@@ -78,3 +79,4 @@ var selectedClass = $(this).find(".btn__text")
 var selectedClass = selectedClass[0].textContent;
   // console.log(selectedClass);
 })
+
