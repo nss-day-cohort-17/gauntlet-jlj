@@ -25,8 +25,8 @@ function displayStats() {
     var p2Stats;
     p1Stats = warrior.toString();
     p2Stats = orc.toString();
-    $(".player-one").append(p1Stats)
-    $(".player-two").append(p2Stats)
+    $("#player-one").append(p1Stats)
+    $("#player-two").append(p2Stats)
 }
 
 $(document).ready(function() {
