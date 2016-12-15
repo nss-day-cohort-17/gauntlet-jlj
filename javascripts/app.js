@@ -12,13 +12,13 @@ var warrior = new Gauntlet.Combatants.Human();
 var orc = new Gauntlet.Combatants.Orc();
 orc.generateClass();
 orc.setWeapon(new Gauntlet.Armory.BroadSword());
-console.log(orc.toString());
+// console.log(orc.toString());
 
 /*
   Test code to generate a spell
  */
 var spell = new Gauntlet.SpellBook.Sphere();
-console.log("spell: ", spell.toString());
+// console.log("spell: ", spell.toString());
 
 function setHealthBar() {
   $("player1Health").attr("max", function() {
@@ -35,8 +35,8 @@ function displayStats() {
     var p2Stats;
     p1Stats = warrior.toString();
     p2Stats = orc.toString();
-    $("#player-one").append(p1Stats)
-    $("#player-two").append(p2Stats)
+    $(".player-one").append(p1Stats)
+    $(".player-two").append(p2Stats)
 }
 
 $(document).ready(function() {
@@ -57,13 +57,13 @@ $(document).ready(function() {
       case "card--class":
         moveAlong = ($("#player-name").val() !== "");
         warrior.playerName = $("#player-name").val()
-        console.log(warrior);
+        // console.log(warrior);
         break;
 
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
         warrior.class = new Gauntlet.GuildHall[selectedClass]
-        console.log(warrior);
+        // console.log(warrior);
         break;
 
         case "card--battleground":
@@ -97,25 +97,27 @@ console.log(Gauntlet);
 $(".btn--blue").click(function(e) {
  selectedClass = $(this).find(".btn__text")
  selectedClass = selectedClass[0].textContent;
-  console.log(selectedClass);
+  // console.log(selectedClass);
 })
 
 
 $(".btn--green").click(function(e) {
  selectedWeapon = $(this).find(".btn__text")
  selectedWeapon = selectedWeapon[0].textContent;
-  console.log(selectedWeapon);
+  // console.log(selectedWeapon);
 })
 
 $("#attack-button").click(function(e){
 
-    $(".battle").append(warrior.health -= orc.weapon.damage)
-    console.log(warrior.health)
+
+    $(".player-one").html(`${warrior.playerName} attacked ${orc.playerName} for ${warrior.weapon.attackDamage()}`)
+    // console.log(warrior.health)
 
     setTimeout(function(){
-        $(".battle").append(orc.health -= warrior.weapon.damage)
-        console.log(orc.health)
+        $(".player-two").html(`${orc.playerName} attacked ${warrior.playerName} for ${orc.weapon.attackDamage()}`)
+        console.log(warrior)
     }, 1000)
+
     // $("#player-two").append(p2Stats)
 
 })
