@@ -96,3 +96,16 @@ $(".btn--green").click(function(e) {
  selectedWeapon = selectedWeapon[0].textContent;
   console.log(selectedWeapon);
 })
+
+$("#attack-button").click(function(e){
+
+    $(".battle").append(warrior.health -= orc.weapon.damage)
+    console.log(warrior.health)
+
+    setTimeout(function(){
+        $(".battle").append(orc.health -= warrior.weapon.damage)
+        console.log(orc.health)
+    }, 1000)
+    // $("#player-two").append(p2Stats)
+
+})
