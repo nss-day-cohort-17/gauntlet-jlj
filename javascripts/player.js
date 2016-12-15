@@ -23,16 +23,16 @@ Gauntlet.Combatants.Player = function(name) {
 
   this.toString = function() {
     var output = [this.playerName,
-      ": a ",
+      " a ",
       this.skinColor,
       " skinned ",
       this.species,
       " ",
       this.class,
-      " with ",
+      " || ",
       this.health,
-      " health. ",
-      (this.class.magical) ? "Able to cast " : " Wielding a ",
+      " Health ",
+      (this.class.magical) ? " || Casting " : " || Wielding ",
       this.weapon.toString(),
       "!"
     ].join("");

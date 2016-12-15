@@ -116,6 +116,36 @@ body {
     align-content: center;
 }
 
+.statsDisplay {
+    display:flex;
+    justify-content: space-between;
+}
+
+#player-one, #player-two {
+    font-size: 15px;
+    font-family: 'Press Start 2P', cursive;
+
+    color: yellow;
+    padding: 15px;
+    border: 5px solid red;
+    background-color: blue;
+    margin: 3%;
+
+
+}
+
+#player-two {
+    font-size: 15px;
+    font-family: 'Press Start 2P', cursive;
+
+    color: yellow;
+    padding: 15px;
+    border: 5px solid red;
+    background-color: blue;
+    margin: 3%;
+}
+
+
 
 .battle {
     position: absolute;
