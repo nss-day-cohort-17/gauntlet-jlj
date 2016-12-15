@@ -20,6 +20,15 @@ var spell = new Gauntlet.SpellBook.Sphere();
 console.log("spell: ", spell.toString());
 
 
+function displayStats() {
+    var p1Stats;
+    var p2Stats;
+    p1Stats = warrior.toString();
+    p2Stats = orc.toString();
+    $(".player-one").append(p1Stats)
+    $(".player-two").append(p2Stats)
+}
+
 $(document).ready(function() {
   /*
     Show the initial view that accepts player name
@@ -40,16 +49,18 @@ $(document).ready(function() {
         warrior.playerName = $("#player-name").val()
         console.log(warrior);
         break;
+
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
         warrior.class = new Gauntlet.GuildHall[selectedClass]
         console.log(warrior);
-
         break;
+
         case "card--battleground":
           moveAlong = ($("#player-name").val() !== "");
           warrior.weapon = new Gauntlet.Armory[selectedWeapon]
           console.log(warrior);
+          displayStats();
           break;
     }
 
