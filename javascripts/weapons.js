@@ -56,12 +56,12 @@ Gauntlet.Armory.Lance = function() {
 };
 Gauntlet.Armory.Lance.prototype = new Gauntlet.Armory.Weapon();
 
-Gauntlet.Armory.Spike = function() {
-  this.name = "spike";
+Gauntlet.Armory.Pike = function() {
+  this.name = "pike";
   this.damage = 18;
   this.hands = 2;
 };
-Gauntlet.Armory.Spike.prototype = new Gauntlet.Armory.Weapon();
+Gauntlet.Armory.Pike.prototype = new Gauntlet.Armory.Weapon();
 
 Gauntlet.Armory.Bomb = function() {
   this.name = "bomb";
