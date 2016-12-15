@@ -112,19 +112,19 @@ body {
   border-radius: 0 5px 5px 0;
 }
 
+#attack-button {
+    align-content: center;
+}
 
 
 .battle {
-
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
 
-    background: url("http://orig04.deviantart.net/b452/f/2012/193/3/1/spaceship_background_3_by_indigodeep-d56yq3x.jpg") no-repeat center; 
+    background: url("http://orig04.deviantart.net/b452/f/2012/193/3/1/spaceship_background_3_by_indigodeep-d56yq3x.jpg") no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
-
-
+    text-align: center;
 }
