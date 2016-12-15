@@ -2,6 +2,7 @@
   Test code to generate a human player and an orc player
  */
  var selectedClass
+ var selectedWeapon
 var warrior = new Gauntlet.Combatants.Human();
 // warrior.setWeapon(new WarAxe());
 // warrior.generateClass();  // This will be used for "Surprise me" option
@@ -9,7 +10,7 @@ var warrior = new Gauntlet.Combatants.Human();
 
 var orc = new Gauntlet.Combatants.Orc();
 orc.generateClass();
-orc.setWeapon(new BroadSword());
+orc.setWeapon(new Gauntlet.Armory.BroadSword());
 console.log(orc.toString());
 
 /*
@@ -47,7 +48,8 @@ $(document).ready(function() {
         break;
         case "card--battleground":
           moveAlong = ($("#player-name").val() !== "");
-
+          warrior.weapon = new Gauntlet.Armory[selectedWeapon]
+          console.log(warrior);
           break;
     }
 
@@ -75,4 +77,11 @@ $(".btn--blue").click(function(e) {
  selectedClass = $(this).find(".btn__text")
  selectedClass = selectedClass[0].textContent;
   console.log(selectedClass);
+})
+
+
+$(".btn--green").click(function(e) {
+ selectedWeapon = $(this).find(".btn__text")
+ selectedWeapon = selectedWeapon[0].textContent;
+  console.log(selectedWeapon);
 })
