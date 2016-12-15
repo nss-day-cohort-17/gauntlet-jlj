@@ -1,5 +1,5 @@
 body {
-  font-family: "Lato", "Helvetica", "sans-serif";
+  font-family: Roboto, "Helvetica", "sans-serif";
   margin: 0;
   padding: 10px;
   font-size: 3em;
@@ -21,7 +21,7 @@ body {
 /*
   Section styles
  */
-.card { 
+.card {
   display: none;
 }
 
@@ -67,6 +67,12 @@ body {
   border-color: #0074D9;
   color: white;
   background-color: #0074D9;
+}
+
+.btn--green {
+  border-color: #0074D9;
+  color: #111;
+  background-color: #9cf725;
 }
 
 .btn--yellow {
