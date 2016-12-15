@@ -3,6 +3,8 @@ body {
   margin: 0;
   padding: 10px;
   font-size: 3em;
+  height: 100%;
+  width: 100%;
 }
 
 .field {
@@ -108,4 +110,21 @@ body {
 .btn__text {
   padding: 0 50px 0 20px;
   border-radius: 0 5px 5px 0;
+}
+
+
+
+.battle {
+
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+
+    background: url("http://orig04.deviantart.net/b452/f/2012/193/3/1/spaceship_background_3_by_indigodeep-d56yq3x.jpg") no-repeat center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+
+
 }
