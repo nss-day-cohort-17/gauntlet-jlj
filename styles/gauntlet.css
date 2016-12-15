@@ -116,6 +116,48 @@ body {
     align-content: center;
 }
 
+.playerDisplay {
+    display:flex;
+    justify-content: space-around;
+}
+
+
+
+#orc {
+    max-width: 63%;
+    min-height: 200px;
+    width: auto;
+    padding: 26px;
+    margin-right: 207px;
+    margin-top: 200px;
+}
+
+#warrior {
+    max-width: 81%;
+    min-height: 380px;
+    width: auto;
+    margin-left: 29%;
+    margin-top: 90px;
+}
+
+
+
+
+
+
+
+.battle {
+    top: 0; right: 0; bottom: 0; left: 0;
+
+/*("http://orig04.deviantart.net/b452/f/2012/193/3/1/spaceship_background_3_by_indigodeep-d56yq3x.jpg")*/
+    background: url("https://lh3.googleusercontent.com/-l2jTmaTSGMU/VZ-oGTMJNKI/AAAAAAAAAKI/GeIwHPxcJbklc8JWTUS2Se9Ca00wGhrwQCL0B/s0-d/tumblr_mq3j94YlNd1qdmahlo1_1280.gif") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+}
+
 .statsDisplay {
     display:flex;
     justify-content: space-around;
@@ -132,33 +174,6 @@ body {
     border: 5px solid red;
     background-color: blue;
     margin: 3%;
-
-
-}
-
-.player-two {
-    font-size: 15px;
-    font-family: 'Press Start 2P', cursive;
-
-    color: yellow;
-    padding: 15px;
-    border: 5px solid red;
-    background-color: blue;
-    margin: 3%;
-}
-
-
-
-.battle {
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-
-    background: url("http://orig04.deviantart.net/b452/f/2012/193/3/1/spaceship_background_3_by_indigodeep-d56yq3x.jpg") no-repeat center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    text-align: center;
 }
 
 #healthbar {
@@ -168,6 +183,7 @@ body {
 }
 
 #player1Health, #player2Health {
+  border: 5px solid yellow;
   flex-grow: 2;
   height: 1em;
   -webkit-appearance: none;
