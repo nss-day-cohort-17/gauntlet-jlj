@@ -1,6 +1,7 @@
 /*
   Test code to generate a human player and an orc player
  */
+
  var selectedClass
  var selectedWeapon
 var warrior = new Gauntlet.Combatants.Human();
@@ -18,6 +19,15 @@ console.log(orc.toString());
  */
 var spell = new Gauntlet.SpellBook.Sphere();
 console.log("spell: ", spell.toString());
+
+function setHealthBar() {
+  $("player1Health").attr("max", function() {
+    return warrior.health
+  })
+
+
+
+}
 
 
 function displayStats() {

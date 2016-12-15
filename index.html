@@ -207,13 +207,16 @@
     <section id="battleground" class="card card--battleground">
         <div class="battle row">
             <!-- Back Button -->
-            <div>
+            <div id="healthbar">
+                <progress id="player1Health" value="51" max="51"></progress>
                 <div>
                     <a class="card__back btn btn--small" href="#" previous="card--class">
                         <span class="btn__prompt">&lt;</span>
                         <span class="btn__text">Play Again</span>
                     </a>
                 </div>
+                <progress id="player2Health" value="80" max="100"></progress>
+
             </div>
             <!-- Player Stats -->
             <div class="statsDisplay">
