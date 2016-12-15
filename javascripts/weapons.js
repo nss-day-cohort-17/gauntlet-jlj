@@ -18,6 +18,9 @@ Gauntlet.Armory.Weapon = function() {
   }
 };
 
+Gauntlet.Armory.Weapon.prototype.attackDamage = function(weaponDmg) {
+  return Math.floor(Math.random() (weaponDmg - 3) + (weaponDmg + 3))
+}
 Gauntlet.Armory.Weapon.prototype = new Gauntlet.Armory.Shelf();
 
 Gauntlet.Armory.Dagger = function() {

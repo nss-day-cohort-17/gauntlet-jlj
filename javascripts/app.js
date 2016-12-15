@@ -35,8 +35,8 @@ function displayStats() {
     var p2Stats;
     p1Stats = warrior.toString();
     p2Stats = orc.toString();
-    $("#player-one").append(p1Stats)
-    $("#player-two").append(p2Stats)
+    $(".player-one").append(p1Stats)
+    $(".player-two").append(p2Stats)
 }
 
 $(document).ready(function() {
@@ -109,13 +109,16 @@ $(".btn--green").click(function(e) {
 
 $("#attack-button").click(function(e){
 
-    $(".battle").append(warrior.health -= orc.weapon.damage)
+
+    $(".player-one").html(`${warrior.playerName} attacked ${orc.playerName} for ${warrior.weapon.damage}`)
     console.log(warrior.health)
 
     setTimeout(function(){
-        $(".battle").append(orc.health -= warrior.weapon.damage)
-        console.log(orc.health)
+        $(".player-two").html(`${orc.playerName} attacked ${warrior.playerName} for ${orc.weapon.damage}`)
+        console.log(warrior)
+        // console.log(warrior.Armory.Weapon.attackDamage(warrior.weapon.damage))
     }, 1000)
+
     // $("#player-two").append(p2Stats)
 
 })
