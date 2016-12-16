@@ -39,6 +39,7 @@ function displayStats() {
     $("#player1Health").attr("value", warrior.health)
     $("#player2Health").attr("max", orc.health)
     $("#player2Health").attr("value", orc.health)
+
 }
 
 $(document).ready(function() {
@@ -137,6 +138,7 @@ $("#attack-button").click(function(e){
     // }
 
 
-    // $("#player-two").append(p2Stats)
+
+
 
 })
