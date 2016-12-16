@@ -10,7 +10,7 @@ var warrior = new Gauntlet.Combatants.Human();
 // console.log(warrior.toString());
 
 var orc = new Gauntlet.Combatants.Orc();
-orc.generateClass();
+orc.class = Gauntlet.GuildHall.Random();
 orc.setWeapon(new Gauntlet.Armory.BroadSword());
 // console.log(orc.toString());
 
