@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <title>Gauntlet</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700|Press+Start+2P" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="styles/gauntlet.css">
   </head>
   <body>
     <article id="game-container">
       <section id="player-setup" class="card card--name">
         <div class="card__prompt">
-          <div>WHO DARES TO ENTER?</div>
+          <div class="title">WHO DARES TO ENTER?</div>
           <div class="field">
             <input type="text" autofocus="true" id="player-name" class="field__textinput">
           </div>
@@ -27,7 +27,8 @@
       </section>
       <section id="class-select" class="card card--class">
         <div class="card__prompt">
-          <div>CHOOSE YOUR PLAYER</div>
+
+          <div class="title">CHOOSE YOUR PLAYER</div>
           <div>
             <a class="card__back btn btn--small"
               href="#"
@@ -107,7 +108,7 @@
               <div class="card__button">
                 <a class="class__link btn btn--big btn--yellow" href="#">
                   <span class="btn__prompt">&lt;</span>
-                  <span class="btn__text">surprise me</span>
+                  <span class="btn__text">Random</span>
                 </a>
               </div>
             </div>
@@ -124,7 +125,7 @@
       </section>
       <section id="weapon-select" class="card card--weapon">
         <div class="card__prompt">
-          <div>CHOOSE YOUR WEAPON!</div>
+          <div class="title">CHOOSE YOUR WEAPON!</div>
           <div>
             <a class="card__back btn btn--small"
               href="#"
@@ -191,45 +192,80 @@
             <div class="col-sm-4">
               <div id="showWeapon"></div>
             </div>
-            <!-- container-fluid -->
-            <div class="card__button">
-              <a class="card__link btn btn--big btn--orange"
-                href="#"
-                next="card--battleground">
-                <span class="btn__prompt"></span>
-                <span class="btn__text">DEFEAT YOUR ENEMIES</span>
-              </a>
-            </div>
-          </section>
-          <section id="battleground" class="card card--battleground">
-            <div class="battle row">
-              <!-- Back Button -->
-              <div>
+
+        <!-- continer-fluid -->
+        <div class="card__button">
+          <a class="card__link btn btn--big btn--orange"
+            href="#"
+            next="card--battleground">
+            <span class="btn__prompt">&lt;</span>
+            <span class="btn__text">DEFEAT YOUR ENEMIES</span>
+          </a>
+        </div>
+      </section>
+
+
+    <section id="battleground" class="card card--battleground">
+        <div class="battle row">
+            <!-- Back Button -->
+            <div id="healthbar">
+                <progress id="player1Health" value="0" max="0"></progress>
                 <div>
-                  <a class="card__back btn btn--small" href="#" previous="card--class">
-                    <span class="btn__prompt">&lt;</span>
-                    <span class="btn__text">Play Again</span>
-                  </a>
+                    <a id="playAgain" class="hidden-class card__back btn btn--small" href="#" previous="card--class">
+                        <span class="btn__prompt">&lt;</span>
+                        <span class="btn__text">Play Again</span>
+                    </a>
                 </div>
-              </div>
-              <!-- Player Stats -->
-              <div class="statsDisplay">
-                <div id="player-one">
+                <progress id="player2Health" value="0" max="0"></progress>
+
+            </div>
+            <!-- Player Stats -->
+            <div class="statsDisplay">
+
+                <div class="player-one">
+
+
                 </div>
-                <div id="player-two">
+
+
+                <div class="player-two">
+
+
                 </div>
               </div>
               <button id="attack-button">Attack</button>
             </div>
+
           </section>
         </article>
-        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script src="javascripts/weapons.js"></script>
-        <script src="javascripts/classes.js"></script>
-        <script src="javascripts/spells.js"></script>
-        <script src="javascripts/player.js"></script>
-        <script src="javascripts/enemies.js"></script>
-        <script src="javascripts/app.js"></script>
-        <script src="javascripts/events.js"></script>
-      </body>
-    </html>
+
+            <div class="playerDisplay">
+
+                <div class="display-player-one">
+                    <img id="warrior" src="https://s-media-cache-ak0.pinimg.com/originals/50/23/66/50236671c4a91592d97c528e4d2c7085.gif" alt="warrior">
+
+                </div>
+                <div class="display-player-two">
+                    <img id="orc" src="http://orig09.deviantart.net/9faf/f/2012/270/8/d/skeleton_warrior_by_ucantw1n-d5g2zde.gif" alt="orc">
+                </div>
+
+            </div>
+            <!-- <button id="attack-button">Attack</button> -->
+
+
+        </div>
+    </section>
+
+
+      </article>
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="javascripts/weapons.js"></script>
+      <script src="javascripts/classes.js"></script>
+      <script src="javascripts/spells.js"></script>
+      <script src="javascripts/player.js"></script>
+      <script src="javascripts/enemies.js"></script>
+      <script src="javascripts/app.js"></script>
+      <script src="javascripts/events.js"></script>
+
+  </body>
+</html>

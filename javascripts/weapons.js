@@ -16,7 +16,11 @@ Gauntlet.Armory.Weapon = function() {
   this.toString = function() {
     return this.name;
   }
+  this.attackDamage = function() {
+    return Math.floor(Math.random() * (this.damage - 3) + (this.damage + 3))
+  }
 };
+
 
 Gauntlet.Armory.Weapon.prototype = new Gauntlet.Armory.Shelf();
 

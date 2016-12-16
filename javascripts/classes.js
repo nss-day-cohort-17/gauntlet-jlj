@@ -4,7 +4,7 @@
 var Gauntlet = Gauntlet || {};
 Gauntlet.GuildHall = {};
 
-
+var classesArray = ["Warrior", "Berserker", "Valkyrie", "Monk", "Wizard", "Sorcerer", "Conjurer", "Thief", "Ninja", "Assassin"];
 /*
   Base function for a player, or enemy, class (profession)
  */
@@ -19,6 +19,21 @@ Gauntlet.GuildHall.PlayerClass = function() {
   this.toString = function() {
     return this.name;
   }
+};
+
+Gauntlet.GuildHall.Random = function() {
+  // Get a random index from the allowed classes array
+  var random = Math.round(Math.random() * (classesArray.length - 1));
+
+  // Get the string at the index
+  var randomClass = classesArray[random];
+
+  // Composes the corresponding player class into the player object
+  this.class = new Gauntlet.GuildHall[randomClass]();
+
+  // Add the health bonus
+  this.health += this.class.healthBonus;
+  return this.class;
 };
 
 /*
