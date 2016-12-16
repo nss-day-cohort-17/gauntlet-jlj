@@ -100,6 +100,11 @@ $(".btn--blue").click(function(e) {
   // console.log(selectedClass);
 })
 
+$(".btn--yellow").click(function(e) {
+  selectedClass = $(this).find(".btn__text")
+  selectedClass = selectedClass[0].textContent;
+})
+
 
 $(".btn--green").click(function(e) {
  selectedWeapon = $(this).find(".btn__text")
