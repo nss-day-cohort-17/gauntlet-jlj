@@ -19,11 +19,6 @@ body {
   text-align: center;
   min-width: 500px;
 }
-/*
-.row {
-    min-height: 826px;
-    width: auto;
-}*/
 
 .title {
     margin-top: 5%;
@@ -125,6 +120,7 @@ body {
 
 #attack-button {
     align-content: center;
+    margin: .5em;
     background-image: url("../img/animated-fire-image-0423.gif");
     color: white;
     border: 3px solid red;
@@ -133,16 +129,17 @@ body {
     border-radius: 100%;
 }
 
+#showWeapon img {
+    max-width: 100%;
+    height: auto;
+}
+
 .playerDisplay {
     display:flex;
     justify-content: space-around;
 }
 
 
-#showWeapon img {
-  max-width: 100%;
-  height: auto;
-}
 
 #orc {
     max-width: 63%;
@@ -161,6 +158,7 @@ body {
 
 .battle {
     top: 0; right: 0; bottom: 0; left: 0;
+    position: relative;
 /*("http://orig04.deviantart.net/b452/f/2012/193/3/1/spaceship_background_3_by_indigodeep-d56yq3x.jpg")*/
     background: url("https://lh3.googleusercontent.com/-l2jTmaTSGMU/VZ-oGTMJNKI/AAAAAAAAAKI/GeIwHPxcJbklc8JWTUS2Se9Ca00wGhrwQCL0B/s0-d/tumblr_mq3j94YlNd1qdmahlo1_1280.gif") no-repeat center;
     -webkit-background-size: cover;
