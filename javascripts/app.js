@@ -116,15 +116,6 @@ $(".btn--green").click(function(e) {
   // console.log(selectedWeapon);
 })
 
-$("#playAgain").click(function() {
-  // warrior.health = 0
-  orc.class = Gauntlet.GuildHall.Random();
-  orc.health = Gauntlet.Combatants.Player.health
-  orc.setWeapon(new Gauntlet.Armory.BroadSword());
-  $("#attack-button").removeAttr("disabled")
-  $("#playAgain").addClass("hidden-class")
-})
-
 $("#attack-button").click(function(e){
 
     var player1AttDmg = warrior.weapon.attackDamage()
