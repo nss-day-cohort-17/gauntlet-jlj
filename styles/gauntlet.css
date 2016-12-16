@@ -118,6 +118,7 @@ body {
     color: white;
     border: 3px solid red;
     width: 300px;
+    height: auto;
     border-radius: 100%;
 
 }
@@ -154,9 +155,10 @@ img {
     margin: 3%;
 }
 #showWeapon {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 100%;
+  max-height: auto;
 }
+
 .battle {
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;

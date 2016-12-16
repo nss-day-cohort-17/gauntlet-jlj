@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
   <head>
     <meta charset="utf-8">
     <title>Gauntlet</title>
@@ -28,7 +27,7 @@
       </section>
       <section id="class-select" class="card card--class">
         <div class="card__prompt">
-          <div>CHOOSE YOUR PATH</div>
+          <div>CHOOSE YOUR PLAYER</div>
           <div>
             <a class="card__back btn btn--small"
               href="#"
@@ -156,8 +155,20 @@
                   <span class="btn__text">WarAxe</span>
                 </a>
               </div>
+              <div class="card__button">
+                <a class="class__link btn btn--big btn--green" id="bomb" href="#">
+                  <span class="btn__prompt"></span>
+                  <span class="btn__text">Bomb</span>
+                </a>
+              </div>
             </div>
             <div class="col-sm-4">
+              <div class="card__button">
+                <a class="class__link btn btn--big btn--green" id="tomahawk" href="#">
+                  <span class="btn__prompt"></span>
+                  <span class="btn__text">Tomahawk</span>
+                </a>
+              </div>
               <div class="card__button">
                 <a class="class__link btn btn--big btn--green" id="mace" href="#">
                   <span class="btn__prompt"></span>
@@ -178,76 +189,47 @@
               </div>
             </div>
             <div class="col-sm-4">
-              <div class="card__button">
-                <a class="class__link btn btn--big btn--green" id="bomb" href="#">
-                  <span class="btn__prompt"></span>
-                  <span class="btn__text">Bomb</span>
-                </a>
-
-              </div>
-              <div class="card__button">
-                <a class="class__link btn btn--big btn--green" id="tomahawk" href="#">
-                  <span class="btn__prompt"></span>
-                  <span class="btn__text">Tomahawk</span>
-                </a>
-              </div>
               <div id="showWeapon"></div>
             </div>
-
-
-
-        <!-- continer-fluid -->
-        <div class="card__button">
-          <a class="card__link btn btn--big btn--orange"
-            href="#"
-            next="card--battleground">
-            <span class="btn__prompt"></span>
-            <span class="btn__text">DEFEAT YOUR ENEMIES</span>
-          </a>
-        </div>
-      </section>
-
-
-    <section id="battleground" class="card card--battleground">
-        <div class="battle row">
-            <!-- Back Button -->
-            <div>
+            <!-- container-fluid -->
+            <div class="card__button">
+              <a class="card__link btn btn--big btn--orange"
+                href="#"
+                next="card--battleground">
+                <span class="btn__prompt"></span>
+                <span class="btn__text">DEFEAT YOUR ENEMIES</span>
+              </a>
+            </div>
+          </section>
+          <section id="battleground" class="card card--battleground">
+            <div class="battle row">
+              <!-- Back Button -->
+              <div>
                 <div>
-                    <a class="card__back btn btn--small" href="#" previous="card--class">
-                        <span class="btn__prompt">&lt;</span>
-                        <span class="btn__text">Play Again</span>
-                    </a>
+                  <a class="card__back btn btn--small" href="#" previous="card--class">
+                    <span class="btn__prompt">&lt;</span>
+                    <span class="btn__text">Play Again</span>
+                  </a>
                 </div>
-            </div>
-            <!-- Player Stats -->
-            <div class="statsDisplay">
-
+              </div>
+              <!-- Player Stats -->
+              <div class="statsDisplay">
                 <div id="player-one">
-
-
                 </div>
-
-
                 <div id="player-two">
-
                 </div>
-
+              </div>
+              <button id="attack-button">Attack</button>
             </div>
-
-            <button id="attack-button">Attack</button>
-
-        </div>
-    </section>
-
-
-      </article>
-      <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-      <script src="javascripts/weapons.js"></script>
-      <script src="javascripts/classes.js"></script>
-      <script src="javascripts/spells.js"></script>
-      <script src="javascripts/player.js"></script>
-      <script src="javascripts/enemies.js"></script>
-      <script src="javascripts/app.js"></script>
-      <script src="javascripts/events.js"></script>
-  </body>
-</html>
+          </section>
+        </article>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="javascripts/weapons.js"></script>
+        <script src="javascripts/classes.js"></script>
+        <script src="javascripts/spells.js"></script>
+        <script src="javascripts/player.js"></script>
+        <script src="javascripts/enemies.js"></script>
+        <script src="javascripts/app.js"></script>
+        <script src="javascripts/events.js"></script>
+      </body>
+    </html>
