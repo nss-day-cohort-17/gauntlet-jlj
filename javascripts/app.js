@@ -22,9 +22,9 @@ function checkHealth(player) {
   if (player.health <= 0) {
     $("#attack-button").attr("disabled", "true")
     $("#playAgain").removeClass("hidden-class")
-    // return false
+     return false
   }
-  // return true
+   return true
 }
 
 
@@ -117,8 +117,9 @@ $(".btn--green").click(function(e) {
 })
 
 $("#playAgain").click(function() {
-  warrior.health = 0
-  orc.generateClass();
+  // warrior.health = 0
+  orc.class = Gauntlet.GuildHall.Random();
+  orc.health = Gauntlet.Combatants.Player.health
   orc.setWeapon(new Gauntlet.Armory.BroadSword());
   $("#attack-button").removeAttr("disabled")
   $("#playAgain").addClass("hidden-class")
@@ -131,7 +132,8 @@ $("#attack-button").click(function(e){
     $(".player-one").html(`${warrior.playerName} attacked ${orc.playerName} for ${player1AttDmg}`)
     $("#player2Health").attr("value", orc.health)
     checkHealth(orc)
-    // if (checkHealth(orc)) {
+
+    if (checkHealth(orc)) {
 
         setTimeout(function(){
         var player2AttDmg = orc.weapon.attackDamage()
@@ -140,7 +142,13 @@ $("#attack-button").click(function(e){
            $("#player1Health").attr("value", warrior.health)
            checkHealth(warrior)
       }, 1000)
-    // }
+
+    } else {
+      setTimeout(function() {
+        alert("Winner")
+      }, 300)
+
+    }
 
 
 

@@ -32,7 +32,7 @@ Gauntlet.Combatants.Player = function(name) {
       ".  ",
       this.health,
       " Health .",
-      (this.class.magical) ? " Casting " : " Wielding ",
+      "  Wielding ",
       this.weapon.toString(),
       "!"
     ].join("");
