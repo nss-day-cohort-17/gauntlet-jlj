@@ -1,5 +1,7 @@
 body {
-  font-family: Roboto, "Helvetica", "sans-serif";
+    font-family: 'Press Start 2P', cursive;
+
+  /*font-family: Roboto, "Helvetica", "sans-serif";*/
   margin: 0;
   padding: 10px;
   font-size: 3em;
@@ -17,8 +19,15 @@ body {
   text-align: center;
   min-width: 500px;
 }
+/*
+.row {
+    min-height: 826px;
+    width: auto;
+}*/
 
-
+.title {
+    margin-top: 5%;
+}
 
 /*
   Section styles
@@ -60,6 +69,8 @@ body {
 }
 
 .btn--orange {
+  width: 500px;
+  margin-top: 5%;
   border-color: #FF4136;
   color: white;
   background-color: #FF4136;
@@ -84,7 +95,7 @@ body {
 }
 
 .btn--big {
-  font-size: 28px;
+  font-size: 14px;
   padding: 10px;
   font-weight: 400;
 }
@@ -114,6 +125,43 @@ body {
 
 #attack-button {
     align-content: center;
+    margin-bottom: 40px;
+}
+
+.playerDisplay {
+    display:flex;
+    justify-content: space-around;
+}
+
+
+
+#orc {
+    max-width: 63%;
+    min-height: 200px;
+    width: auto;
+    padding: 26px;
+    margin-right: 207px;
+    margin-top: 262px;
+}
+
+#warrior {
+    min-height: 352px;
+    margin-left: 29%;
+    margin-top: 167px;
+}
+
+.battle {
+    top: 0; right: 0; bottom: 0; left: 0;
+
+/*("http://orig04.deviantart.net/b452/f/2012/193/3/1/spaceship_background_3_by_indigodeep-d56yq3x.jpg")*/
+    background: url("https://lh3.googleusercontent.com/-l2jTmaTSGMU/VZ-oGTMJNKI/AAAAAAAAAKI/GeIwHPxcJbklc8JWTUS2Se9Ca00wGhrwQCL0B/s0-d/tumblr_mq3j94YlNd1qdmahlo1_1280.gif") no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    min-height: 826px;
+
 }
 
 .statsDisplay {
@@ -131,34 +179,7 @@ body {
     padding: 15px;
     border: 5px solid red;
     background-color: blue;
-    margin: 3%;
-
-
-}
-
-.player-two {
-    font-size: 15px;
-    font-family: 'Press Start 2P', cursive;
-
-    color: yellow;
-    padding: 15px;
-    border: 5px solid red;
-    background-color: blue;
-    margin: 3%;
-}
-
-
-
-.battle {
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-
-    background: url("http://orig04.deviantart.net/b452/f/2012/193/3/1/spaceship_background_3_by_indigodeep-d56yq3x.jpg") no-repeat center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    text-align: center;
+    margin: 1% 3% 7% 3%;
 }
 
 #healthbar {
@@ -168,8 +189,11 @@ body {
 }
 
 #player1Health, #player2Health {
+  border: 5px solid yellow;
+  margin-top: 1.6%;
   flex-grow: 2;
   height: 1em;
   -webkit-appearance: none;
   color: red;
+
 }
