@@ -152,7 +152,6 @@ body {
 
 .battle {
     top: 0; right: 0; bottom: 0; left: 0;
-
 /*("http://orig04.deviantart.net/b452/f/2012/193/3/1/spaceship_background_3_by_indigodeep-d56yq3x.jpg")*/
     background: url("https://lh3.googleusercontent.com/-l2jTmaTSGMU/VZ-oGTMJNKI/AAAAAAAAAKI/GeIwHPxcJbklc8JWTUS2Se9Ca00wGhrwQCL0B/s0-d/tumblr_mq3j94YlNd1qdmahlo1_1280.gif") no-repeat center;
     -webkit-background-size: cover;
@@ -200,4 +199,15 @@ body {
 
 .hidden-class {
   visibility: hidden;
+}
+
+.winner {
+    position: absolute;
+    margin: 15%;
+    padding: 1em;
+    border: 10px solid yellow;
+    text-align: center;
+    color: yellow;
+    font-size: 3em;
+    top:0;
 }
