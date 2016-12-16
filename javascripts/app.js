@@ -135,6 +135,8 @@ $("#attack-button").click(function(e){
            if (!checkHealth(warrior)) {
                setTimeout(function() {
                    $("body").append(`<div class="winner"> ${orc.playerName} WINNER</div>`)
+                   var audio = new Audio("https://0.s3.envato.com/files/218547150/preview.mp3")
+                   audio.play();
                }, 1100)
 
            }
@@ -143,6 +145,8 @@ $("#attack-button").click(function(e){
     } else {
       setTimeout(function() {
         $("body").append(`<div class="winner"> ${warrior.playerName} WINNER</div>`)
+        var audio = new Audio("https://0.s3.envato.com/files/218721944/preview.mp3")
+        audio.play();
       }, 300)
 
     }
