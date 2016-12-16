@@ -208,14 +208,14 @@
         <div class="battle row">
             <!-- Back Button -->
             <div id="healthbar">
-                <progress id="player1Health" value="51" max="51"></progress>
+                <progress id="player1Health" value="0" max="0"></progress>
                 <div>
-                    <a class="card__back btn btn--small" href="#" previous="card--class">
+                    <a id="playAgain" class="hidden-class card__back btn btn--small" href="#" previous="card--class">
                         <span class="btn__prompt">&lt;</span>
                         <span class="btn__text">Play Again</span>
                     </a>
                 </div>
-                <progress id="player2Health" value="80" max="100"></progress>
+                <progress id="player2Health" value="0" max="0"></progress>
 
             </div>
             <!-- Player Stats -->
@@ -234,7 +234,7 @@
             </div>
 
             <button id="attack-button">Attack</button>
-            
+
             <div class="playerDisplay">
 
                 <div class="display-player-one">
@@ -246,6 +246,8 @@
                 </div>
 
             </div>
+            <!-- <button id="attack-button">Attack</button> -->
+
 
         </div>
     </section>

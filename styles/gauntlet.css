@@ -197,3 +197,7 @@ body {
   color: red;
 
 }
+
+.hidden-class {
+  visibility: hidden;
+}

@@ -5,14 +5,12 @@
  var selectedClass
  var selectedWeapon
 var warrior = new Gauntlet.Combatants.Human();
-// warrior.setWeapon(new WarAxe());
-// warrior.generateClass();  // This will be used for "Surprise me" option
-// console.log(warrior.toString());
+
 
 var orc = new Gauntlet.Combatants.Orc();
 orc.generateClass();
 orc.setWeapon(new Gauntlet.Armory.BroadSword());
-// console.log(orc.toString());
+
 
 /*
   Test code to generate a spell
@@ -20,13 +18,13 @@ orc.setWeapon(new Gauntlet.Armory.BroadSword());
 var spell = new Gauntlet.SpellBook.Sphere();
 // console.log("spell: ", spell.toString());
 
-function setHealthBar() {
-  $("player1Health").attr("max", function() {
-    return warrior.health
-  })
-
-
-
+function checkHealth(player) {
+  if (player.health <= 0) {
+    $("#attack-button").attr("disabled", "true")
+    $("#playAgain").removeClass("hidden-class")
+    // return false
+  }
+  // return true
 }
 
 
@@ -37,6 +35,11 @@ function displayStats() {
     p2Stats = orc.toString();
     $(".player-one").html(p1Stats)
     $(".player-two").html(p2Stats)
+    $("#player1Health").attr("max", warrior.health)
+    $("#player1Health").attr("value", warrior.health)
+    $("#player2Health").attr("max", orc.health)
+    $("#player2Health").attr("value", orc.health)
+
 }
 
 $(document).ready(function() {
@@ -62,6 +65,7 @@ $(document).ready(function() {
 
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
+
         warrior.class = new Gauntlet.GuildHall[selectedClass]
         // console.log(warrior);
         break;
@@ -107,16 +111,33 @@ $(".btn--green").click(function(e) {
   // console.log(selectedWeapon);
 })
 
+$("#playAgain").click(function() {
+  warrior.health = 0
+  orc.generateClass();
+  orc.setWeapon(new Gauntlet.Armory.BroadSword());
+  $("#attack-button").removeAttr("disabled")
+  $("#playAgain").addClass("hidden-class")
+})
+
 $("#attack-button").click(function(e){
 
+    var player1AttDmg = warrior.weapon.attackDamage()
+    orc.health -= player1AttDmg
+    $(".player-one").html(`${warrior.playerName} attacked ${orc.playerName} for ${player1AttDmg}`)
+    $("#player2Health").attr("value", orc.health)
+    checkHealth(orc)
+    // if (checkHealth(orc)) {
 
-    $(".player-one").html(`${warrior.playerName} attacked ${orc.playerName} for ${warrior.weapon.attackDamage()}`)
+        setTimeout(function(){
+        var player2AttDmg = orc.weapon.attackDamage()
+        warrior.health -= player2AttDmg
+          $(".player-two").html(`${orc.playerName} attacked ${warrior.playerName} for ${orc.weapon.attackDamage()}`)
+           $("#player1Health").attr("value", warrior.health)
+           checkHealth(warrior)
+      }, 1000)
+    // }
 
 
-    setTimeout(function(){
-        $(".player-two").html(`${orc.playerName} attacked ${warrior.playerName} for ${orc.weapon.attackDamage()}`)
-        console.log(warrior)
-    }, 1000)
 
 
 
