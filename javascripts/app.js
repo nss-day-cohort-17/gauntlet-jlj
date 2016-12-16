@@ -2,6 +2,14 @@
   Test code to generate a human player and an orc player
  */
 
+var audio2 = new Audio("audio/punch1.mp3")
+var audio3 = new Audio("audio/punch2.mp3")
+var audio4 = new Audio("audio/PUNCH3.mp3")
+var audio5 = new Audio("audio/sword.mp3")
+
+var attSounds = [audio2, audio3, audio4, audio5]
+
+
  var selectedClass
  var selectedWeapon
 var warrior = new Gauntlet.Combatants.Human();
@@ -25,6 +33,13 @@ function checkHealth(player) {
      return false
   }
    return true
+}
+
+
+function attBtnAudio() {
+    var randomNum = Math.floor(Math.random() * 4)
+    console.log(randomNum);
+    return attSounds[randomNum].play()
 }
 
 
@@ -118,6 +133,8 @@ $(".btn--green").click(function(e) {
 
 $("#attack-button").click(function(e){
 
+
+    attBtnAudio()
     var player1AttDmg = warrior.weapon.attackDamage()
     orc.health -= player1AttDmg
     $(".player-one").html(`${warrior.playerName} attacked ${orc.playerName} for ${player1AttDmg}`)
@@ -127,16 +144,17 @@ $("#attack-button").click(function(e){
     if (checkHealth(orc)) {
 
         setTimeout(function(){
-        var player2AttDmg = orc.weapon.attackDamage()
-        warrior.health -= player2AttDmg
-          $(".player-two").html(`${orc.playerName} attacked ${warrior.playerName} for ${orc.weapon.attackDamage()}`)
-           $("#player1Health").attr("value", warrior.health)
+          attBtnAudio()
+          var player2AttDmg = orc.weapon.attackDamage()
+          warrior.health -= player2AttDmg
+            $(".player-two").html(`${orc.playerName} attacked ${warrior.playerName} for ${orc.weapon.attackDamage()}`)
+            $("#player1Health").attr("value", warrior.health)
 
            if (!checkHealth(warrior)) {
                setTimeout(function() {
                    $("body").append(`<div class="winner"> ${orc.playerName} WINNER</div>`)
-                   var audio = new Audio("https://0.s3.envato.com/files/218547150/preview.mp3")
-                   audio.play();
+                   var audio6 = new Audio("https://0.s3.envato.com/files/218547150/preview.mp3")
+                   audio6.play();
                }, 1100)
 
            }
@@ -145,8 +163,8 @@ $("#attack-button").click(function(e){
     } else {
       setTimeout(function() {
         $("body").append(`<div class="winner"> ${warrior.playerName} WINNER</div>`)
-        var audio = new Audio("https://0.s3.envato.com/files/218721944/preview.mp3")
-        audio.play();
+        var audio7 = new Audio("https://0.s3.envato.com/files/218721944/preview.mp3")
+        audio7.play();
       }, 300)
 
     }
