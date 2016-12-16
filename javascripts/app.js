@@ -8,7 +8,7 @@ var warrior = new Gauntlet.Combatants.Human();
 
 
 var orc = new Gauntlet.Combatants.Orc();
-orc.generateClass();
+orc.class = Gauntlet.GuildHall.Random();
 orc.setWeapon(new Gauntlet.Armory.BroadSword());
 
 
@@ -102,6 +102,11 @@ $(".btn--blue").click(function(e) {
  selectedClass = $(this).find(".btn__text")
  selectedClass = selectedClass[0].textContent;
   // console.log(selectedClass);
+})
+
+$(".btn--yellow").click(function(e) {
+  selectedClass = $(this).find(".btn__text")
+  selectedClass = selectedClass[0].textContent;
 })
 
 
