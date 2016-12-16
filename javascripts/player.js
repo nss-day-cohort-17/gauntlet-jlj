@@ -29,7 +29,7 @@ Gauntlet.Combatants.Player = function(name) {
       this.species,
       " ",
       this.class,
-      " || ",
+      ".  ",
       this.health,
       " Health .",
       (this.class.magical) ? " Casting " : " Wielding ",
