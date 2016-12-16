@@ -140,12 +140,18 @@ $("#attack-button").click(function(e){
         warrior.health -= player2AttDmg
           $(".player-two").html(`${orc.playerName} attacked ${warrior.playerName} for ${orc.weapon.attackDamage()}`)
            $("#player1Health").attr("value", warrior.health)
-           checkHealth(warrior)
+
+           if (!checkHealth(warrior)) {
+               setTimeout(function() {
+                   $("body").append(`<div class="winner"> ${orc.playerName} WINNER</div>`)
+               }, 1100)
+
+           }
       }, 1000)
 
     } else {
       setTimeout(function() {
-        alert("Winner")
+        $("body").append(`<div class="winner"> ${warrior.playerName} WINNER</div>`)
       }, 300)
 
     }
