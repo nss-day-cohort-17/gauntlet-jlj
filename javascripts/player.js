@@ -13,7 +13,7 @@ Gauntlet.Combatants.Player = function(name) {
   this.class = null;
   this.weapon = null;
 
-  this.playerName = name || "unknown adventurer";
+  this.playerName = name || "Enemy";
   this.health = Math.floor(Math.random() * 40 + 50);
   this.limbs = ["head", "neck", "arm", "leg", "torso"];
   this.skinColor = "gray";
@@ -23,16 +23,16 @@ Gauntlet.Combatants.Player = function(name) {
 
   this.toString = function() {
     var output = [this.playerName,
-      ": a ",
+      " a ",
       this.skinColor,
       " skinned ",
       this.species,
       " ",
       this.class,
-      " with ",
+      ".  ",
       this.health,
-      " health. ",
-      (this.class.magical) ? "Able to cast " : " Wielding a ",
+      " Health .",
+      "  Wielding ",
       this.weapon.toString(),
       "!"
     ].join("");
@@ -44,23 +44,23 @@ Gauntlet.Combatants.Player.prototype.setWeapon = function(newWeapon) {
   this.weapon = newWeapon;
 }
 
-Gauntlet.Combatants.Player.prototype.generateClass = function() {
-  // Get a random index from the allowed classes array
-  var random = Math.round(Math.random() * (this.allowedClasses.length - 1));
-
-  // Get the string at the index
-  var randomClass = this.allowedClasses[random];
-
-  // Composes the corresponding player class into the player object
-  this.class = new Gauntlet.GuildHall[randomClass]();
-
-  // Add the health bonus
-  this.health += this.class.healthBonus;
-  return this.class;
-};
+// Gauntlet.Combatants.Player.prototype.Random = function() {
+//   // Get a random index from the allowed classes array
+//   var random = Math.round(Math.random() * (this.allowedClasses.length - 1));
+//
+//   // Get the string at the index
+//   var randomClass = this.allowedClasses[random];
+//
+//   // Composes the corresponding player class into the player object
+//   this.class = new Gauntlet.GuildHall[randomClass]();
+//
+//   // Add the health bonus
+//   this.health += this.class.healthBonus;
+//   return this.class;
+// };
 
 /*
-  Define the base properties for a human in a 
+  Define the base properties for a human in a
   constructor function.
  */
 Gauntlet.Combatants.Human = function() {
@@ -79,7 +79,7 @@ Gauntlet.Combatants.Human.prototype = new Gauntlet.Combatants.Player();
 
 
 /*
-  Define the base properties for a monster in a 
+  Define the base properties for a monster in a
   constructor function.
  */
 Gauntlet.Combatants.Monster = function() {
@@ -89,4 +89,3 @@ Gauntlet.Combatants.Monster = function() {
 };
 
 Gauntlet.Combatants.Monster.prototype = new Gauntlet.Combatants.Player();
-
